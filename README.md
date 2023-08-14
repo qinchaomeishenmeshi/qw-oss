@@ -1,11 +1,1 @@
-# `TtOss`
-
-> TODO: description
-
-## Usage
-
-```
-const ttoss = require('TtOss');
-
-// TODO: DEMONSTRATE API
-```
+## OSS 上传公共组件-链接阿里 oss
