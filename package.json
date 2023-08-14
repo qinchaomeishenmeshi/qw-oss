@@ -11,7 +11,8 @@
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "libSrc"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
