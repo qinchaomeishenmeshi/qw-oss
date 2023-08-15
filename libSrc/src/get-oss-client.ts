@@ -1,5 +1,5 @@
-import { TtOss } from "../class";
+import { QwOss } from '../class'
 
 export function getOssClient() {
-  return TtOss.getGlobalInstance().getOssClient();
+  return QwOss.getGlobalInstance().getOssClient()
 }

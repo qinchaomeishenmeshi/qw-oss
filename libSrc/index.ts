@@ -1,6 +1,6 @@
-import { TtOss } from "./class";
+import { QwOss } from './class'
 
-export * from "./typings";
-export * from "./enum";
+export * from './typings'
+export * from './enum'
 
-export default TtOss;
+export default QwOss
