@@ -3,15 +3,18 @@
   "version": "1.0.3",
   "description": "> TODO: description",
   "author": "秦朝没什么事儿 <17671461213@163.com>",
-  "homepage": "lib/index.ts",
+  "homepage": "lib/index.js",
   "license": "ISC",
-  "main": "lib/index.ts",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "libSrc",
+    "node_modules",
+    "babel.config.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
