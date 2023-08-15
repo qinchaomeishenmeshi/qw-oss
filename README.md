@@ -3,85 +3,83 @@
 ###### \1. 引入
 
 ```javascript
-;`import QwOss from 'qw-oss'`
+import QwOss from 'qw-oss'
 ```
 
 ###### \2. 初始化
 
 ```javascript
-   `// 调用接口初始化 oss`
+// 调用接口初始化 oss
 
-   `const initOss = async () => {`
+const initOss = async () => {
+  QwOss.install({ fetchOssInfo: '后端返回 oss 配置的接口/promise 配置对象' })
 
-   		`QwOss.install({ fetchOssInfo: '后端返回 oss 配置的接口/promise 配置对象' })`
-
-   		`QwOss.reinstall()`
-
-   `}
+  QwOss.reinstall()
+}
 ```
 
 ###### \3. 上传
 
 ```javascript
-   `// 上传文件`
+// 上传文件
 
-   `const uploadFile = async (file: File, { chunked = false, maxSize = 3 }): Promise<IUploadFile *|* *null*> => 	{`
+   const uploadFile = async (file: File, { chunked = false, maxSize = 3 }): Promise<IUploadFile *|* *null*> => 	{
 
-   		`console.log('开始上传---->', file)`
-			`// 检查是否初始化 oss`
+   		console.log('开始上传---->', file)
+			// 检查是否初始化 oss
 
-			`await initOss()`
+			await initOss()
 
-			`console.log('初始化完成')`
-			`try {`
+			console.log('初始化完成')
+			try {
 
-						`if (!file) {`
+						if (!file) {
 
-								`throw new Error('No file selected')`
+								throw new Error('No file selected')
 
-						`}`
+						}
 
-			`const resultFile = await QwOss.upload(file, {`
+			const resultFile = await QwOss.upload(file, {
 
-			`onProgress: (num) => {`
+			onProgress: (num) => {
 
-					`setProgress(num)`
+					setProgress(num)
 
-			`}`
+			}
 
-		`})`
+		})
 
-		`setResultFile({`
+		setResultFile({
 
-				`fileName: file.name,`
+				fileName: file.name,
 
-				`name: resultFile.name,`
+				name: resultFile.name,
 
-				`url: resultFile.name`
+				url: resultFile.name
 
-		`})`
+		})
 
-		`const uploadResult = {`
+		const uploadResult = {
 
-				`fileName: file.name,`
+				fileName: file.name,
 
-				`name: resultFile.name,`
+				name: resultFile.name,
 
-				`url: resultFile.name`
+				url: resultFile.name
 
-		`}`
+		}
 
-		`setUploaded(true)`
+		setUploaded(true)
 
-		`return uploadResult`
+		return uploadResult
 
-	`} catch (err) {`
+	} catch (err) {
 
-			`setError(err.message)`
+			setError(err.message)
 
-			`Message.error(err.message || '上传失败！')`
+			Message.error(err.message || '上传失败！')
 
-	`}`
+	}
 
-`}
+}
 ```
